@@ -32,11 +32,11 @@ const buildResponse = (name = 'repo-one') =>
   )
 
 describe('SearchPage', () => {
-  let fetchMock: ReturnType<typeof vi.spyOn<typeof globalThis, 'fetch'>>
+  let fetchMock: vi.SpyInstance<ReturnType<typeof fetch>, Parameters<typeof fetch>>
 
   beforeEach(() => {
     fetchMock = vi
-      .spyOn(globalThis, 'fetch')
+      .spyOn(globalThis as typeof globalThis & { fetch: typeof fetch }, 'fetch')
       .mockImplementation(() => Promise.resolve(buildResponse()))
   })
 

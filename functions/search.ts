@@ -32,7 +32,8 @@ export const onRequest: PagesFunction<Env> = async ({ request, env, waitUntil })
   }
 
   const url = new URL(request.url)
-  const parsed = searchSchema.safeParse(Object.fromEntries(Array.from(url.searchParams.entries())))
+  const paramsArray = Array.from(url.searchParams.entries()) as [string, string][]
+  const parsed = searchSchema.safeParse(Object.fromEntries(paramsArray))
 
   if (!parsed.success) {
     return jsonResponse(
