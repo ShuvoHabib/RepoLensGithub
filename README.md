@@ -1,6 +1,6 @@
 # GitHub Repository Search
 
-Production-ready GitHub repo search app built with React + TypeScript, Vite, React Query, and a Cloudflare Pages Function proxy for authenticated requests.
+Production-ready GitHub repo search app built with React + TypeScript, Vite, React Query, and a Cloudflare Pages Function proxy for authenticated requests. Live at https://repolens.shuvohabib.com/.
 
 ## Features
 - Debounced keyword search with server-side pagination, sorting (best match, stars, updated), language and fork filters.
