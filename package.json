@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "test": "vitest run --coverage && tsc --noEmit",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "deploy:pages": "wrangler pages deploy dist --project-name=github-search --functions=functions"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.64.0",
