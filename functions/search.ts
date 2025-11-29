@@ -32,7 +32,7 @@ export const onRequest: PagesFunction<Env> = async ({ request, env, waitUntil })
   }
 
   const url = new URL(request.url)
-  const paramsArray = Array.from(url.searchParams.entries()) as [string, string][]
+  const paramsArray = Array.from(url.searchParams as unknown as Iterable<[string, string]>)
   const parsed = searchSchema.safeParse(Object.fromEntries(paramsArray))
 
   if (!parsed.success) {
