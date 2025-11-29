@@ -38,10 +38,10 @@ const createWrapper = () => {
 }
 
 describe('useSearchRepos', () => {
-  let fetchMock: ReturnType<typeof vi.spyOn>
+  let fetchMock: ReturnType<typeof vi.spyOn<typeof globalThis, 'fetch'>>
 
   beforeEach(() => {
-    fetchMock = vi.spyOn(global, 'fetch').mockImplementation(() =>
+    fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation(() =>
       Promise.resolve(
         new Response(JSON.stringify(mockResponse), {
           status: 200,
